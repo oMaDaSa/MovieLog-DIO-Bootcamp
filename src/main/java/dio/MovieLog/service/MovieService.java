@@ -8,6 +8,8 @@ import java.util.List;
 public interface MovieService{
     Movie findById(Long id);
 
+    List<Movie> findAll();
+
     List<Movie> findByNameContaining(String name);
 
     List<Movie> findByDate_Year(int year);

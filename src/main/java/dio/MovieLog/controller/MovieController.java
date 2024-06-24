@@ -25,6 +25,12 @@ public class MovieController {
         return ResponseEntity.ok(movie);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Movie>> findAll(){
+        List<Movie> movies = movieService.findAll();
+        return ResponseEntity.ok(movies);
+    }
+
     @GetMapping("/genre")
     public ResponseEntity<List<Movie>> findByGenres(@RequestParam String genre){
         List<Movie> movies = movieService.findByGenresContaining(genre);

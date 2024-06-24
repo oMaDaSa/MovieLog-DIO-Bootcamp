@@ -23,6 +23,11 @@ public class MovieServiceImp implements MovieService {
     }
 
     @Override
+    public List<Movie> findAll() {
+        return movieRepository.findAll();
+    }
+
+    @Override
     public List<Movie> findByNameContaining(String name) {
         List<Movie> movieList = movieRepository.findByNameContaining(name);
 
