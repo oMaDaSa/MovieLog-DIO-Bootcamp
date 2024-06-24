@@ -3,14 +3,13 @@ package dio.MovieLog.controller;
 import dio.MovieLog.domain.model.Movie;
 import dio.MovieLog.service.MovieService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/movie")
 public class MovieController {
 
@@ -20,15 +19,15 @@ public class MovieController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Movie> findById(@PathVariable Long id){
+    @GetMapping("/id")
+    public ResponseEntity<Movie> findById(@RequestParam Long id){
         Movie movie = movieService.findById(id);
         return ResponseEntity.ok(movie);
     }
 
     @GetMapping("/genre")
-    public ResponseEntity<List<Movie>> findByGenre(@RequestParam String genre){
-        List<Movie> movies = movieService.findByGenre(genre);
+    public ResponseEntity<List<Movie>> findByGenres(@RequestParam String genre){
+        List<Movie> movies = movieService.findByGenresContaining(genre);
         return ResponseEntity.ok(movies);
     }
 
@@ -40,7 +39,7 @@ public class MovieController {
 
     @GetMapping("/name")
     public ResponseEntity<List<Movie>> findByName(@RequestParam String name){
-        List<Movie> movies = movieService.findByGenre(name);
+        List<Movie> movies = movieService.findByNameContaining(name);
         return ResponseEntity.ok(movies);
     }
 
@@ -48,8 +47,9 @@ public class MovieController {
     public ResponseEntity<Movie> create(@RequestBody Movie movieToCreate){
         Movie movieCreated = movieService.create(movieToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(movieCreated.getId())
+                .path("")
+                .queryParam("id", movieCreated.getId())
+                .build()
                 .toUri();
         return ResponseEntity.created(location).body(movieCreated);
     }

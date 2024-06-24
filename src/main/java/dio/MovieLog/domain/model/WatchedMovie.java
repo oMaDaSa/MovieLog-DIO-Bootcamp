@@ -10,7 +10,7 @@ public class WatchedMovie {
     @ManyToOne
     private Movie movie;
     @Column(precision = 3)
-    private int note;
+    private int rating;
 
     // Getters and Setters
 
@@ -29,12 +29,13 @@ public class WatchedMovie {
         this.movie = movie;
     }
 
-    public int getNote() {
-        return note;
+    public int getRating() {
+        return rating;
     }
 
-    public void setNote(int note) {
-        this.note = note;
+    public void setRating(int note) {
+        this.rating = note;
     }
+
 }
 

@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
-    List<Movie>  findByName(String name);
+    List<Movie>  findByNameContaining(String name);
 
     @Query("SELECT m FROM tb_movie m WHERE YEAR(m.releaseDate) = :year")
     List<Movie> findByYear(@Param("year") int year);
 
-    List<Movie>  findByGenre(String genre);
+    List<Movie> findByGenresContaining(String genre);
 }

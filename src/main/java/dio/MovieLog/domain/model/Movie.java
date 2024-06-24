@@ -3,6 +3,7 @@ package dio.MovieLog.domain.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity(name = "tb_movie")
 public class Movie {
@@ -11,7 +12,8 @@ public class Movie {
     private Long id;
     private String name;
     private Date releaseDate;
-    private String genre;
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> genres;
 
     // Getters and Setters
 
@@ -38,11 +40,11 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public String getGenre() {
-        return genre;
+    public List<String> getGenres() {
+        return genres;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setGenres(List<String> genre) {
+        this.genres = genre;
     }
 }

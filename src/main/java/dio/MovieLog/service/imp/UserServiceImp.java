@@ -5,6 +5,7 @@ import dio.MovieLog.domain.model.WatchedMovie;
 import dio.MovieLog.domain.repository.UserRepository;
 import dio.MovieLog.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
