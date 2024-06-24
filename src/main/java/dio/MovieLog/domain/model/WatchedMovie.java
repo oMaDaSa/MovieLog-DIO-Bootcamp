@@ -1,4 +1,4 @@
-package dio.MovieLog.model;
+package dio.MovieLog.domain.model;
 
 import jakarta.persistence.*;
 
@@ -13,6 +13,14 @@ public class WatchedMovie {
     private int note;
 
     // Getters and Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    void setId(Long id) {
+        this.id = id;
+    }
     public Movie getMovie() {
         return movie;
     }

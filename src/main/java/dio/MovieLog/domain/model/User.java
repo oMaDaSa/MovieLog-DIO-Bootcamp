@@ -1,8 +1,7 @@
-package dio.MovieLog.model;
+package dio.MovieLog.domain.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "tb_user")
@@ -16,6 +15,16 @@ public class User {
     private List<WatchedMovie> watchedMovies;
 
     // Getters and Setters
+
+
+    public Long getId() {
+        return id;
+    }
+
+    void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
