@@ -28,6 +28,8 @@ public class WatchedMovieServiceImp implements WatchedMovieService {
     public WatchedMovie addWatchedMovie(Long userId, Long movieId, int rating) {
         User user = userRepository.findById(userId).orElseThrow(NoSuchElementException::new);
         Movie movie = movieRepository.findById(movieId).orElseThrow(NoSuchElementException::new);
+        if(rating > 100 || rating < 0)
+            throw new IllegalArgumentException("Invalid rating value");
 
         WatchedMovie watchedMovie = new WatchedMovie();
         watchedMovie.setMovie(movie);
