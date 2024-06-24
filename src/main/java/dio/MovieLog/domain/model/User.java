@@ -8,15 +8,12 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String name;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
     private List<WatchedMovie> watchedMovies;
 
     // Getters and Setters
-
-
     public Long getId() {
         return id;
     }

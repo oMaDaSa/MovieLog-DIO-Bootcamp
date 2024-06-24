@@ -23,8 +23,8 @@ public class MovieServiceImp implements MovieService {
     }
 
     @Override
-    public List<Movie> findByName(String name) {
-        List<Movie> movieList = movieRepository.findByName(name);
+    public List<Movie> findByNameContaining(String name) {
+        List<Movie> movieList = movieRepository.findByNameContaining(name);
 
         if(movieList.isEmpty()){
             throw new NoSuchElementException("No movie named like this found");
@@ -43,8 +43,8 @@ public class MovieServiceImp implements MovieService {
     }
 
     @Override
-    public List<Movie> findByGenre(String genre) {
-        List<Movie> movieList = movieRepository.findByGenre(genre);
+    public List<Movie> findByGenresContaining(String genre) {
+        List<Movie> movieList = movieRepository.findByGenresContaining(genre);
 
         if(movieList.isEmpty()){
             throw new NoSuchElementException("No movie from this genre found");
