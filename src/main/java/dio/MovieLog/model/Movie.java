@@ -4,12 +4,11 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "tb_Movie")
+@Entity(name = "tb_movie")
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private Date releaseDate;
     private String genre;

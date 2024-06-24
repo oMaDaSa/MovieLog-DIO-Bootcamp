@@ -5,13 +5,12 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "tb_user")
+@Entity(name = "tb_user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long id;
+    private Long id;
     private String name;
     @OneToMany
     private List<WatchedMovie> watchedMovies;

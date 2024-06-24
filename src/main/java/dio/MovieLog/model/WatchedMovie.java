@@ -2,17 +2,14 @@ package dio.MovieLog.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "tb_WatchedMovies")
-
+@Entity(name = "tb_watchedMovies")
 public class WatchedMovie {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
-    private long id;
-
-    @OneToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
     private Movie movie;
+    @Column(precision = 3)
     private int note;
 
     // Getters and Setters
