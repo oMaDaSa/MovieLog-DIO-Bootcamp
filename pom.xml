@@ -87,7 +87,7 @@
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<addClasspath>true</addClasspath>
-							<mainClass>me.dio.MovieLog.Application</mainClass>
+							<mainClass>dio.MovieLog.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
