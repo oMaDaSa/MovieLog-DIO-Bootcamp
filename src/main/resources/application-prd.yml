@@ -1,9 +1,13 @@
 spring:
   datasource:
-    url: postgresql://database_49xm_user:KLutLmi3daUjLPpU70GgmzskJc6lW2v5@dpg-ctgo7q52ng1s738loptg-a.oregon-postgres.render.com
+    url: jdbc:postgresql://dpg-ctgo7q52ng1s738loptg-a.oregon-postgres.render.com/database_49xm
     username: database_49xm_user
     password: KLutLmi3daUjLPpU70GgmzskJc6lW2v5
   jpa:
-    open-in-view: false
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
+    show-sql: true
+server:
+  tomcat:
+    accesslog:
+      enabled: true
