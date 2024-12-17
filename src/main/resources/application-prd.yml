@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://monorail.proxy.rlwy.net:47620/railway
-    username: postgres
-    password: ldedkLjdPLtprGOBmbUmqSuPLUgiOFmT
+    url: postgresql://database_49xm_user:KLutLmi3daUjLPpU70GgmzskJc6lW2v5@dpg-ctgo7q52ng1s738loptg-a.oregon-postgres.render.com
+    username: database_49xm_user
+    password: KLutLmi3daUjLPpU70GgmzskJc6lW2v5
   jpa:
     open-in-view: false
     hibernate:
