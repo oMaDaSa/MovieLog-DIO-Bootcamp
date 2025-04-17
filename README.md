@@ -1,10 +1,17 @@
-Java RESTful API criada para a Santander Dev Week.
+# Java RESTful API for Santander Dev Week
 
-## Principais Tecnologias
- - **Java 17**: Utilizaremos a versão LTS mais recente do Java para tirar vantagem das últimas inovações que essa linguagem robusta e amplamente utilizada oferece;
- - **Spring Boot 3**: Trabalharemos com a mais nova versão do Spring Boot, que maximiza a produtividade do desenvolvedor por meio de sua poderosa premissa de autoconfiguração;
- - **Spring Data JPA**: Exploraremos como essa ferramenta pode simplificar nossa camada de acesso aos dados, facilitando a integração com bancos de dados SQL;
- - **OpenAPI (Swagger)**: Vamos criar uma documentação de API eficaz e fácil de entender usando a OpenAPI (Swagger), perfeitamente alinhada com a alta produtividade que o Spring Boot oferece;
- - **Railway**: facilita o deploy e monitoramento de nossas soluções na nuvem, além de oferecer diversos bancos de dados como serviço e pipelines de CI/CD.
+This project is a **RESTful API** built with **Java** for the Santander Dev Week.
 
--> Alteração do serviço de Hospedagem Railway para **Render** 
+## Key Technologies
+
+- **Java 17**
+- **Spring Boot 3**: Designed to maximize developer productivity with its powerful auto-configuration capabilities.
+- **Spring Data JPA**: Simplifies the data access layer, making it easier to integrate with SQL databases.
+- **OpenAPI (Swagger)**: To create clear and effective API documentation, ensuring ease of understanding and use.
+- **Render**: We’ve switched our cloud hosting and monitoring service from Railway to **Render**, which provides a seamless environment for deploying applications along with database services and CI/CD pipelines.
+
+## Access the API
+
+You can access and interact with the API using the Swagger UI at the following link:
+
+[API Documentation (Swagger UI)](https://movielog.onrender.com/swagger-ui.html)
